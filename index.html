@@ -1,52 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Mark Gillespie</title>
-  <meta name="description" content="Mark Gillespie — media engineering, workflow automation, data analytics and creative technology.">
 
   <style>
-    /* =========================================================
-       QUICK CUSTOMIZATION
-
-       These are the main values you'll probably want to edit.
-    ========================================================= */
-
     :root {
-      --background: #070707;
-      --surface: #101010;
-      --surface-2: #141414;
-      --text: #f4f4f1;
-      --muted: #8d8d88;
-      --border: #252525;
-      --accent: #f3f3ef;
-
-      --page-width: 980px;
-      --radius: 18px;
+      --bg: #000000;
+      --card: #0b0b0b;
+      --card-hover: #111111;
+      --text: #f5f5f5;
+      --muted: #8a8a8a;
+      --border: #1d1d1d;
+      --accent: #4da3ff;
+      --max-width: 850px;
     }
-
-
-    /* =========================================================
-       BASE
-    ========================================================= */
 
     * {
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
-      background: var(--background);
+      background: var(--bg);
       color: var(--text);
       font-family: Arial, Helvetica, sans-serif;
       line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
     }
 
     a {
@@ -54,764 +35,371 @@
       text-decoration: none;
     }
 
-    img {
-      display: block;
-      width: 100%;
-    }
-
-    .page {
-      width: calc(100% - 36px);
-      max-width: var(--page-width);
+    .container {
+      width: calc(100% - 40px);
+      max-width: var(--max-width);
       margin: 0 auto;
-      padding: 34px 0 80px;
+      padding: 70px 0;
     }
 
+    /* INTRO */
 
-    /* =========================================================
-       TOP BAR
-    ========================================================= */
-
-    .topbar {
-      display: grid;
-      grid-template-columns: 1fr auto auto;
-      gap: 28px;
-      align-items: center;
-
-      padding: 12px 0 28px;
+    .intro {
+      padding-bottom: 45px;
       border-bottom: 1px solid var(--border);
     }
 
-    .name {
-      font-size: 15px;
+    h1 {
+      margin: 0 0 12px;
+      font-size: 54px;
       font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-
-    .topbar a {
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .topbar a:hover {
-      color: var(--text);
-    }
-
-
-    /* =========================================================
-       INTRO
-    ========================================================= */
-
-    .intro {
-      padding: 56px 0 34px;
-    }
-
-    .intro h1 {
-      max-width: 730px;
-      margin: 0;
-
-      font-size: clamp(42px, 7vw, 74px);
-      line-height: 0.98;
-      letter-spacing: -0.06em;
-      font-weight: 600;
+      letter-spacing: -0.05em;
     }
 
     .intro p {
-      max-width: 610px;
-      margin: 22px 0 0;
+      max-width: 560px;
+      margin: 0;
       color: var(--muted);
       font-size: 15px;
     }
 
-
-    /* =========================================================
-       TOP GRID — based on your sketch
-    ========================================================= */
-
-    .dashboard {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 14px;
+    .intro-links {
       margin-top: 18px;
-    }
-
-    .panel {
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: var(--surface);
-      overflow: hidden;
-    }
-
-    .panel-title {
-      padding: 14px 16px;
-      border-bottom: 1px solid var(--border);
-
-      color: var(--muted);
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-
-    /* =========================================================
-       TOOL GRID
-    ========================================================= */
-
-    .tool-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: var(--border);
-    }
-
-    .tool {
-      min-height: 108px;
-      padding: 18px;
-
       display: flex;
-      align-items: center;
-      justify-content: center;
-
-      background: #0d0d0d;
-    }
-
-    .tool img {
-      max-width: 90px;
-      max-height: 56px;
-      object-fit: contain;
-    }
-
-    /*
-      Some uploaded logos were made for light backgrounds.
-      Add class="light" to give that logo a soft light tile.
-    */
-
-    .tool.light {
-      background: #ecece8;
-    }
-
-    /*
-      Some logos need more horizontal space.
-    */
-
-    .tool.wide img {
-      max-width: 118px;
-    }
-
-
-    /* =========================================================
-       APPLICATIONS
-    ========================================================= */
-
-    .applications {
-      min-height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .application-feature {
-      flex: 1;
-      min-height: 330px;
-      padding: 26px;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-
-      background:
-        radial-gradient(circle at 70% 20%, rgba(255,255,255,0.06), transparent 28%),
-        #111111;
-    }
-
-    .application-feature h2 {
-      margin: 0;
-      font-size: 31px;
-      letter-spacing: -0.045em;
-      font-weight: 500;
-    }
-
-    .application-feature p {
-      max-width: 300px;
-      margin: 12px 0 0;
-      color: var(--muted);
+      gap: 18px;
       font-size: 13px;
     }
 
-    .application-logo {
-      width: 150px;
-      height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      background: #050505;
-    }
-
-    .application-logo img {
-      width: 115px;
-      max-height: 46px;
-      object-fit: contain;
-    }
-
-    .mini-link {
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .mini-link:hover {
+    .intro-links a {
       color: var(--text);
     }
 
+    .intro-links a:hover {
+      color: var(--accent);
+    }
 
-    /* =========================================================
-       LARGE PORTFOLIO CARDS
-    ========================================================= */
+    /* GRID */
 
-    .section-label {
-      margin: 64px 0 16px;
+    .grid {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+    }
+
+    .card {
+      min-height: 180px;
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--card);
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .card:hover {
+      background: var(--card-hover);
+      transform: translateY(-2px);
+    }
+
+    .card.large {
+      grid-column: span 2;
+    }
+
+    .card.tall {
+      grid-row: span 2;
+      min-height: 372px;
+    }
+
+    .card-label {
       color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 10px;
+    }
 
-      font-size: 10px;
+    .card h2 {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: -0.03em;
+    }
+
+    .card p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .card-arrow {
+      display: inline-block;
+      margin-top: 18px;
+      font-size: 13px;
+      color: var(--text);
+    }
+
+    /* OPTIONAL FEATURE CARD */
+
+    .featured {
+      background: #111111;
+    }
+
+    .featured:hover {
+      background: #161616;
+    }
+
+    /* WORK SECTION */
+
+    .section-title {
+      margin: 70px 0 20px;
+      font-size: 12px;
+      color: var(--muted);
       text-transform: uppercase;
       letter-spacing: 0.12em;
     }
 
-    .feature-card {
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      background: var(--surface);
+    .work-list {
+      border-top: 1px solid var(--border);
     }
 
-    .feature-header {
-      display: flex;
-      justify-content: space-between;
-      gap: 24px;
-      align-items: flex-end;
-
-      padding: 22px;
+    .work-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      padding: 20px 0;
       border-bottom: 1px solid var(--border);
     }
 
-    .feature-header h2 {
+    .work-item h3 {
       margin: 0;
-      font-size: clamp(28px, 4vw, 42px);
+      font-size: 17px;
       font-weight: 500;
-      letter-spacing: -0.045em;
     }
 
-    .feature-header p {
-      max-width: 380px;
-      margin: 0;
+    .work-item span {
       color: var(--muted);
       font-size: 13px;
-      text-align: right;
     }
 
-
-    /* =========================================================
-       MEDIA ENGINEER COLLAGE
-    ========================================================= */
-
-    .media-collage {
-      display: grid;
-      grid-template-columns: 1.35fr 0.65fr;
-      gap: 1px;
-      background: var(--border);
+    .work-item:hover h3 {
+      color: var(--accent);
     }
 
-    .media-main,
-    .media-side {
-      background: #0a0a0a;
-    }
-
-    .media-main img {
-      height: 100%;
-      min-height: 440px;
-      object-fit: cover;
-    }
-
-    .media-side {
-      display: grid;
-      grid-template-rows: 1fr 1fr;
-      gap: 1px;
-      background: var(--border);
-    }
-
-    .media-side img {
-      height: 100%;
-      min-height: 219px;
-      object-fit: cover;
-    }
-
-
-    /* =========================================================
-       DATA ANALYST
-    ========================================================= */
-
-    .data-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      background: var(--border);
-    }
-
-    .data-image {
-      padding: 20px;
-      background: #f2f2ef;
-    }
-
-    .data-image img {
-      width: 100%;
-      height: 100%;
-      max-height: 600px;
-      object-fit: contain;
-    }
-
-
-    /* =========================================================
-       SMALL DESCRIPTION BLOCK
-    ========================================================= */
-
-    .details {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border-top: 1px solid var(--border);
-    }
-
-    .detail {
-      padding: 18px 20px;
-      background: var(--surface);
-    }
-
-    .detail strong {
-      display: block;
-      margin-bottom: 4px;
-      font-size: 12px;
-      font-weight: 500;
-    }
-
-    .detail span {
-      color: var(--muted);
-      font-size: 11px;
-    }
-
-
-    /* =========================================================
-       FOOTER
-    ========================================================= */
+    /* FOOTER */
 
     footer {
       margin-top: 70px;
-      padding-top: 22px;
+      padding-top: 25px;
       border-top: 1px solid var(--border);
-
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-
       color: #555;
-      font-size: 11px;
+      font-size: 12px;
     }
 
+    /* MOBILE */
 
-    /* =========================================================
-       MOBILE
-    ========================================================= */
-
-    @media (max-width: 760px) {
-
-      .topbar {
-        grid-template-columns: 1fr auto;
+    @media (max-width: 700px) {
+      h1 {
+        font-size: 42px;
       }
 
-      .topbar a:first-of-type {
-        display: none;
-      }
-
-      .dashboard {
+      .grid {
         grid-template-columns: 1fr;
       }
 
-      .tool-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .application-feature {
-        min-height: 280px;
-      }
-
-      .feature-header {
-        display: block;
-      }
-
-      .feature-header p {
-        margin-top: 12px;
-        text-align: left;
-      }
-
-      .media-collage {
-        grid-template-columns: 1fr;
-      }
-
-      .media-main img {
-        min-height: 320px;
-      }
-
-      .media-side {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
-      }
-
-      .media-side img {
-        min-height: 170px;
-      }
-
-      .data-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .details {
-        grid-template-columns: 1fr;
+      .card.large,
+      .card.tall {
+        grid-column: auto;
+        grid-row: auto;
+        min-height: 180px;
       }
     }
-
-
-    @media (max-width: 500px) {
-
-      .page {
-        width: calc(100% - 24px);
-      }
-
-      .tool-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .intro {
-        padding-top: 42px;
-      }
-    }
-
   </style>
 </head>
 
 <body>
 
-  <main class="page">
+  <div class="container">
 
-
-    <!-- =====================================================
-         TOP BAR
-    ====================================================== -->
-
-    <header class="topbar">
-
-      <div class="name">
-        Mark Gillespie
-      </div>
-
-      <a href="YOUR-RESUME.pdf" target="_blank">
-        Resume ↗
-      </a>
-
-      <a href="https://linkedin.com/in/YOURUSERNAME" target="_blank">
-        LinkedIn ↗
-      </a>
-
-    </header>
-
-
-    <!-- =====================================================
-         INTRO
-    ====================================================== -->
+    <!-- INTRO -->
 
     <section class="intro">
 
-      <h1>
-        Media systems, automation, data & creative technology.
-      </h1>
+      <h1>Mark Gillespie</h1>
 
       <p>
-        I work across live production, broadcast engineering, workflow automation,
-        cloud systems, analytics, editing and generative AI.
+        Media systems, workflow automation, data, broadcast engineering,
+        video production, and generative AI.
       </p>
 
-    </section>
-
-
-    <!-- =====================================================
-         TOOLS + APPLICATIONS
-    ====================================================== -->
-
-    <section class="dashboard">
-
-
-      <!-- TOOLS -->
-
-      <div class="panel">
-
-        <div class="panel-title">
-          Tools
-        </div>
-
-        <div class="tool-grid">
-
-          <div class="tool light">
-            <img src="aws.png" alt="AWS">
-          </div>
-
-          <div class="tool">
-            <img src="blackmagic.png" alt="Blackmagic Design">
-          </div>
-
-          <div class="tool light">
-            <img src="final-cut.png" alt="Final Cut Pro">
-          </div>
-
-          <div class="tool light wide">
-            <img src="grass-valley.png" alt="Grass Valley">
-          </div>
-
-          <div class="tool light">
-            <img src="mysql.png" alt="MySQL">
-          </div>
-
-          <div class="tool light wide">
-            <img src="n8n.png" alt="n8n">
-          </div>
-
-          <div class="tool">
-            <img src="newtek.png" alt="NewTek">
-          </div>
-
-          <div class="tool">
-            <img src="premiere.png" alt="Adobe Premiere Pro">
-          </div>
-
-          <div class="tool">
-            <img src="ross.png" alt="Ross Video">
-          </div>
-
-          <div class="tool light">
-            <img src="sqlite.png" alt="SQLite">
-          </div>
-
-          <div class="tool light wide">
-            <img src="tableau.png" alt="Tableau">
-          </div>
-
-          <div class="tool light wide">
-            <img src="telestream.png" alt="Telestream">
-          </div>
-
-          <div class="tool">
-            <img src="vizrt.png" alt="Vizrt">
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- APPLICATIONS / CURRENT EXPLORATION -->
-
-      <div class="panel applications">
-
-        <div class="panel-title">
-          Applications
-        </div>
-
-        <div class="application-feature">
-
-          <div>
-
-            <div class="application-logo">
-              <img src="assets/runway.png" alt="Runway">
-            </div>
-
-          </div>
-
-          <div>
-
-            <h2>
-              AI + workflow experiments
-            </h2>
-
-            <p>
-              Generative video, automation, metadata, APIs and practical AI workflows
-              for modern media production.
-            </p>
-
-          </div>
-
-          <a class="mini-link" href="#">
-            View experiments ↗
-          </a>
-
-        </div>
-
+      <div class="intro-links">
+        <a href="https://github.com/YOURUSERNAME">GitHub</a>
+        <a href="https://linkedin.com/in/YOURUSERNAME">LinkedIn</a>
+        <a href="mailto:YOUR-EMAIL@example.com">Email</a>
+        <a href="YOUR-RESUME.pdf">Resume</a>
       </div>
 
     </section>
 
 
-    <!-- =====================================================
-         MEDIA ENGINEER
-    ====================================================== -->
+    <!-- MAIN CARDS -->
 
-    <div class="section-label">
-      Selected work / 01
-    </div>
+    <div class="grid">
 
-    <section class="feature-card">
+      <a href="#" class="card large">
 
-      <div class="feature-header">
+        <div class="card-label">
+          Featured project
+        </div>
 
         <h2>
-          Media Engineer
+          Automated Media Workflow
         </h2>
 
         <p>
-          Live production, technical direction, broadcast systems,
-          streaming and fast-turn editorial workflows.
+          Media automation using AWS, APIs, Vantage,
+          n8n and publishing integrations.
         </p>
 
-      </div>
+        <span class="card-arrow">
+          View project ↗
+        </span>
+
+      </a>
 
 
-      <div class="media-collage">
+      <a href="#" class="card tall featured">
 
-        <div class="media-main">
-          <img
-            src="assets/lol-promo.png"
-            alt="Live production example"
-          >
+        <div class="card-label">
+          AI
         </div>
-
-        <div class="media-side">
-
-          <img
-            src="assets/lol-reel-1.png"
-            alt="Esports editing example"
-          >
-
-          <img
-            src="assets/lol-reel-3.png"
-            alt="Esports highlight editing example"
-          >
-
-        </div>
-
-      </div>
-
-
-      <div class="details">
-
-        <div class="detail">
-          <strong>Broadcast</strong>
-          <span>Technical directing · signal routing · live systems</span>
-        </div>
-
-        <div class="detail">
-          <strong>Editing</strong>
-          <span>Premiere Pro · Final Cut Pro · live highlights</span>
-        </div>
-
-        <div class="detail">
-          <strong>Streaming</strong>
-          <span>OBS · vMix · NDI · remote contribution</span>
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         DATA ANALYST
-    ====================================================== -->
-
-    <div class="section-label">
-      Selected work / 02
-    </div>
-
-    <section class="feature-card">
-
-      <div class="feature-header">
 
         <h2>
-          Data Analyst
+          Generative AI
         </h2>
 
         <p>
-          SQL-driven analysis and Tableau dashboards built to turn raw data
-          into clearer decisions and visual stories.
+          AI video, metadata generation, automated QC,
+          and agent-based media workflows.
         </p>
 
-      </div>
+        <span class="card-arrow">
+          View work ↗
+        </span>
+
+      </a>
 
 
-      <div class="data-grid">
+      <a href="#" class="card">
 
-        <div class="data-image">
-          <img
-            src="assets/covid-data.png"
-            alt="World COVID data Tableau dashboard"
-          >
+        <div class="card-label">
+          Data
         </div>
 
-        <div class="data-image">
-          <img
-            src="assets/feb-sales.png"
-            alt="Sales by city Tableau dashboard"
-          >
+        <h2>
+          SQL + Tableau
+        </h2>
+
+        <p>
+          Analytics and visualization projects.
+        </p>
+
+        <span class="card-arrow">
+          View project ↗
+        </span>
+
+      </a>
+
+
+      <a href="#" class="card">
+
+        <div class="card-label">
+          Broadcast
         </div>
 
-      </div>
+        <h2>
+          Live Systems
+        </h2>
+
+        <p>
+          Technical directing, streaming,
+          routing and production engineering.
+        </p>
+
+        <span class="card-arrow">
+          View work ↗
+        </span>
+
+      </a>
 
 
-      <div class="details">
+      <a href="#" class="card large">
 
-        <div class="detail">
-          <strong>SQL</strong>
-          <span>MySQL · SQLite · querying · transformation</span>
+        <div class="card-label">
+          Video
         </div>
 
-        <div class="detail">
-          <strong>Visualization</strong>
-          <span>Tableau · dashboard design · storytelling</span>
-        </div>
+        <h2>
+          Editing & Live Production
+        </h2>
 
-        <div class="detail">
-          <strong>Analysis</strong>
-          <span>Trends · comparisons · exploratory analysis</span>
-        </div>
+        <p>
+          Broadcast editing, esports highlights,
+          live production and technical workflows.
+        </p>
 
-      </div>
+        <span class="card-arrow">
+          Watch reel ↗
+        </span>
 
-    </section>
+      </a>
+
+    </div>
 
 
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
+    <!-- LATEST WORK -->
+
+    <div class="section-title">
+      Selected Work
+    </div>
+
+
+    <div class="work-list">
+
+      <a href="#" class="work-item">
+        <h3>Automated Media Distribution Pipeline</h3>
+        <span>AWS / API / n8n</span>
+      </a>
+
+      <a href="#" class="work-item">
+        <h3>YouTube Performance Analytics</h3>
+        <span>SQL / Tableau</span>
+      </a>
+
+      <a href="#" class="work-item">
+        <h3>AI Metadata & QC Workflow</h3>
+        <span>AI / Automation</span>
+      </a>
+
+      <a href="#" class="work-item">
+        <h3>Broadcast & Technical Direction</h3>
+        <span>Live Media</span>
+      </a>
+
+      <a href="#" class="work-item">
+        <h3>Generative AI Video</h3>
+        <span>Runway / AI Video</span>
+      </a>
+
+    </div>
+
+
+    <!-- FOOTER -->
 
     <footer>
-
-      <span>
-        © 2026 Mark Gillespie
-      </span>
-
-      <span>
-        Los Angeles, CA
-      </span>
-
+      © 2026 Mark Gillespie
     </footer>
 
-  </main>
+  </div>
 
 </body>
 </html>
