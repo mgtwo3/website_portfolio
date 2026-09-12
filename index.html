@@ -1,64 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Mark Gillespie — Media Systems & Automation</title>
-
-  <meta
-    name="description"
-    content="Mark Gillespie — Media systems, workflow automation, data, AI, broadcast engineering and video production."
-  >
+  <title>Mark Gillespie</title>
 
   <style>
-
-    /* =========================================================
-       VARIABLES
-    ========================================================= */
-
     :root {
       --bg: #000000;
+      --card: #0b0b0b;
+      --card-hover: #111111;
       --text: #f5f5f5;
       --muted: #8a8a8a;
-      --muted-dark: #555555;
-      --line: #1d1d1d;
-      --line-hover: #333333;
-      --surface: #080808;
-
-      --max-width: 1200px;
+      --border: #1d1d1d;
+      --accent: #4da3ff;
+      --max-width: 850px;
     }
-
-
-    /* =========================================================
-       RESET
-    ========================================================= */
 
     * {
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
-
       background: var(--bg);
       color: var(--text);
-
-      font-family:
-        Inter,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Helvetica,
-        Arial,
-        sans-serif;
-
-      -webkit-font-smoothing: antialiased;
-
+      font-family: Arial, Helvetica, sans-serif;
       line-height: 1.5;
     }
 
@@ -67,1545 +35,371 @@
       text-decoration: none;
     }
 
-    img,
-    video {
-      display: block;
-      width: 100%;
-    }
-
     .container {
-      width: calc(100% - 48px);
+      width: calc(100% - 40px);
       max-width: var(--max-width);
       margin: 0 auto;
+      padding: 70px 0;
     }
 
+    /* INTRO */
 
-    /* =========================================================
-       NAVIGATION
-    ========================================================= */
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-
-      background: rgba(0, 0, 0, 0.82);
-      backdrop-filter: blur(18px);
-
-      border-bottom: 1px solid var(--line);
-    }
-
-    nav {
-      height: 72px;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-size: 14px;
-      font-weight: 500;
-      letter-spacing: -0.02em;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    .nav-links a {
-      transition: color 0.2s ease;
-    }
-
-    .nav-links a:hover {
-      color: white;
-    }
-
-
-    /* =========================================================
-       HERO
-    ========================================================= */
-
-    .hero {
-      min-height: 88vh;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-
-      padding: 120px 0;
-    }
-
-    .hero-label {
-      margin-bottom: 30px;
-
-      color: var(--muted);
-
-      font-size: 12px;
-      font-weight: 500;
-
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
+    .intro {
+      padding-bottom: 45px;
+      border-bottom: 1px solid var(--border);
     }
 
     h1 {
-      max-width: 1050px;
-
-      margin: 0;
-
-      font-size: clamp(60px, 9vw, 118px);
-      font-weight: 450;
-
-      letter-spacing: -0.065em;
-      line-height: 0.92;
-    }
-
-    .hero-description {
-      max-width: 650px;
-
-      margin: 42px 0 0;
-
-      color: var(--muted);
-
-      font-size: clamp(17px, 2vw, 21px);
-      line-height: 1.55;
-
-      letter-spacing: -0.015em;
-    }
-
-    .hero-bottom {
-      margin-top: 48px;
-
-      display: flex;
-      align-items: center;
-      gap: 28px;
-
-      font-size: 13px;
-    }
-
-    .text-link {
-      position: relative;
-      padding-bottom: 5px;
-    }
-
-    .text-link::after {
-      content: "";
-
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-
-      height: 1px;
-
-      background: white;
-
-      transform: scaleX(1);
-      transform-origin: left;
-
-      transition: transform 0.25s ease;
-    }
-
-    .text-link:hover::after {
-      transform: scaleX(0);
-      transform-origin: right;
-    }
-
-    .hero-status {
-      color: var(--muted-dark);
-    }
-
-
-    /* =========================================================
-       GENERAL SECTIONS
-    ========================================================= */
-
-    section {
-      border-top: 1px solid var(--line);
-      padding: 130px 0;
-    }
-
-    .section-intro {
-      display: grid;
-
-      grid-template-columns: 180px 1fr;
-
-      gap: 60px;
-
-      margin-bottom: 80px;
-    }
-
-    .section-number {
-      color: var(--muted-dark);
-
-      font-size: 12px;
-      letter-spacing: 0.08em;
-    }
-
-    .section-title {
-      max-width: 800px;
-
-      margin: 0;
-
-      font-size: clamp(36px, 5vw, 64px);
-      font-weight: 450;
-
+      margin: 0 0 12px;
+      font-size: 54px;
+      font-weight: 700;
       letter-spacing: -0.05em;
-      line-height: 1.03;
     }
 
-
-    /* =========================================================
-       PROJECT LIST
-    ========================================================= */
-
-    .project-list {
-      border-top: 1px solid var(--line);
-    }
-
-    .project {
-      position: relative;
-
-      display: grid;
-
-      grid-template-columns:
-        70px
-        minmax(250px, 1.1fr)
-        minmax(300px, 1fr)
-        120px;
-
-      gap: 30px;
-
-      align-items: center;
-
-      min-height: 180px;
-
-      border-bottom: 1px solid var(--line);
-
-      transition:
-        background 0.25s ease,
-        padding 0.25s ease;
-    }
-
-    .project:hover {
-      background: var(--surface);
-
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-
-    .project-number {
-      color: var(--muted-dark);
-
-      font-size: 12px;
-    }
-
-    .project-title {
+    .intro p {
+      max-width: 560px;
       margin: 0;
-
-      font-size: clamp(22px, 2.5vw, 32px);
-      font-weight: 450;
-
-      letter-spacing: -0.035em;
-    }
-
-    .project-description {
-      margin: 0;
-
-      max-width: 450px;
-
       color: var(--muted);
-
-      font-size: 14px;
-
-      line-height: 1.6;
+      font-size: 15px;
     }
 
-    .project-arrow {
-      text-align: right;
-
-      color: var(--muted);
-
-      font-size: 20px;
-
-      transition:
-        color 0.2s ease,
-        transform 0.2s ease;
-    }
-
-    .project:hover .project-arrow {
-      color: white;
-
-      transform: translate(4px, -4px);
-    }
-
-    .project-meta {
-      grid-column: 2 / 4;
-
-      margin-top: -45px;
-
+    .intro-links {
+      margin-top: 18px;
       display: flex;
       gap: 18px;
-      flex-wrap: wrap;
-
-      color: var(--muted-dark);
-
-      font-size: 11px;
-
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
+      font-size: 13px;
     }
 
+    .intro-links a {
+      color: var(--text);
+    }
 
-    /* =========================================================
-       FEATURED PROJECT
-    ========================================================= */
+    .intro-links a:hover {
+      color: var(--accent);
+    }
+
+    /* GRID */
+
+    .grid {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+    }
+
+    .card {
+      min-height: 180px;
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--card);
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .card:hover {
+      background: var(--card-hover);
+      transform: translateY(-2px);
+    }
+
+    .card.large {
+      grid-column: span 2;
+    }
+
+    .card.tall {
+      grid-row: span 2;
+      min-height: 372px;
+    }
+
+    .card-label {
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 10px;
+    }
+
+    .card h2 {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: -0.03em;
+    }
+
+    .card p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .card-arrow {
+      display: inline-block;
+      margin-top: 18px;
+      font-size: 13px;
+      color: var(--text);
+    }
+
+    /* OPTIONAL FEATURE CARD */
 
     .featured {
-      margin-top: 80px;
+      background: #111111;
     }
 
-    .featured-media {
-      min-height: 520px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      position: relative;
-
-      overflow: hidden;
-
-      border: 1px solid var(--line);
-
-      background:
-        radial-gradient(
-          circle at 40% 30%,
-          #161616,
-          #060606 50%,
-          #000 100%
-        );
+    .featured:hover {
+      background: #161616;
     }
 
-    .featured-diagram {
-      width: 80%;
-      max-width: 800px;
+    /* WORK SECTION */
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      flex-wrap: wrap;
-
-      gap: 14px;
-    }
-
-    .featured-diagram span {
-      padding: 14px 20px;
-
-      border: 1px solid #333;
-
-      background: #080808;
-
-      border-radius: 999px;
-
-      color: #bbb;
-
+    .section-title {
+      margin: 70px 0 20px;
       font-size: 12px;
-    }
-
-    .featured-diagram i {
-      width: 55px;
-      height: 1px;
-
-      background: #444;
-    }
-
-    .featured-info {
-      display: grid;
-
-      grid-template-columns: 1fr 1fr;
-
-      gap: 50px;
-
-      padding: 28px 0;
-    }
-
-    .featured-info h3 {
-      margin: 0;
-
-      font-size: 20px;
-      font-weight: 450;
-
-      letter-spacing: -0.025em;
-    }
-
-    .featured-info p {
-      margin: 0;
-
       color: var(--muted);
-
-      font-size: 14px;
-
-      max-width: 520px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
     }
 
-
-    /* =========================================================
-       EXPERIENCE
-    ========================================================= */
-
-    .experience-list {
-      border-top: 1px solid var(--line);
+    .work-list {
+      border-top: 1px solid var(--border);
     }
 
-    .experience {
+    .work-item {
       display: grid;
-
-      grid-template-columns: 180px 1fr 1fr;
-
-      gap: 60px;
-
-      padding: 38px 0;
-
-      border-bottom: 1px solid var(--line);
-    }
-
-    .experience-date {
-      color: var(--muted-dark);
-
-      font-size: 12px;
-    }
-
-    .experience-title {
-      margin: 0;
-
-      font-size: 19px;
-      font-weight: 450;
-
-      letter-spacing: -0.025em;
-    }
-
-    .experience-company {
-      margin-top: 5px;
-
-      color: var(--muted);
-
-      font-size: 13px;
-    }
-
-    .experience-description {
-      margin: 0;
-
-      color: var(--muted);
-
-      font-size: 14px;
-
-      max-width: 520px;
-    }
-
-
-    /* =========================================================
-       ABOUT
-    ========================================================= */
-
-    .about-layout {
-      display: grid;
-
-      grid-template-columns: 1fr 1fr;
-
-      gap: 100px;
-    }
-
-    .about-copy {
-      color: #aaa;
-
-      font-size: clamp(18px, 2vw, 23px);
-
-      letter-spacing: -0.02em;
-    }
-
-    .about-copy p {
-      margin-top: 0;
-    }
-
-    .capabilities {
-      border-top: 1px solid var(--line);
-    }
-
-    .capability {
-      display: grid;
-
-      grid-template-columns: 150px 1fr;
-
-      gap: 35px;
-
+      grid-template-columns: 1fr auto;
+      gap: 20px;
       padding: 20px 0;
-
-      border-bottom: 1px solid var(--line);
+      border-bottom: 1px solid var(--border);
     }
 
-    .capability-title {
-      color: #eee;
-
-      font-size: 13px;
-    }
-
-    .capability-text {
-      color: var(--muted);
-
-      font-size: 13px;
-    }
-
-
-    /* =========================================================
-       CONTACT
-    ========================================================= */
-
-    .contact-section {
-      min-height: 70vh;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .contact-heading {
-      max-width: 1000px;
-
+    .work-item h3 {
       margin: 0;
-
-      font-size: clamp(55px, 8vw, 108px);
-      font-weight: 450;
-
-      letter-spacing: -0.065em;
-      line-height: 0.94;
-    }
-
-    .contact-description {
-      max-width: 620px;
-
-      margin-top: 40px;
-
-      color: var(--muted);
-
       font-size: 17px;
+      font-weight: 500;
     }
 
-    .contact-links {
-      display: flex;
-
-      flex-wrap: wrap;
-
-      gap: 28px;
-
-      margin-top: 42px;
-
+    .work-item span {
+      color: var(--muted);
       font-size: 13px;
     }
 
+    .work-item:hover h3 {
+      color: var(--accent);
+    }
 
-    /* =========================================================
-       FOOTER
-    ========================================================= */
+    /* FOOTER */
 
     footer {
-      border-top: 1px solid var(--line);
-
-      padding: 30px 0;
+      margin-top: 70px;
+      padding-top: 25px;
+      border-top: 1px solid var(--border);
+      color: #555;
+      font-size: 12px;
     }
 
-    .footer-inner {
-      display: flex;
+    /* MOBILE */
 
-      justify-content: space-between;
-
-      color: var(--muted-dark);
-
-      font-size: 11px;
-    }
-
-
-    /* =========================================================
-       SUBTLE ANIMATION
-    ========================================================= */
-
-    .fade {
-      opacity: 0;
-
-      transform: translateY(14px);
-
-      transition:
-        opacity 0.7s ease,
-        transform 0.7s ease;
-    }
-
-    .fade.visible {
-      opacity: 1;
-
-      transform: translateY(0);
-    }
-
-
-    /* =========================================================
-       MOBILE
-    ========================================================= */
-
-    @media (max-width: 850px) {
-
-      .container {
-        width: calc(100% - 32px);
-      }
-
-      .nav-links {
-        gap: 16px;
-      }
-
-      .nav-links a:nth-child(2) {
-        display: none;
-      }
-
-      .hero {
-        min-height: 82vh;
-
-        padding: 90px 0;
-      }
-
+    @media (max-width: 700px) {
       h1 {
-        font-size: clamp(55px, 15vw, 90px);
+        font-size: 42px;
       }
 
-      section {
-        padding: 90px 0;
-      }
-
-      .section-intro {
+      .grid {
         grid-template-columns: 1fr;
-
-        gap: 25px;
-
-        margin-bottom: 55px;
       }
 
-      .project {
-        grid-template-columns: 40px 1fr 35px;
-
-        gap: 15px;
-
-        padding: 32px 0;
+      .card.large,
+      .card.tall {
+        grid-column: auto;
+        grid-row: auto;
+        min-height: 180px;
       }
-
-      .project-description {
-        grid-column: 2 / 4;
-
-        margin-top: 5px;
-      }
-
-      .project-arrow {
-        grid-column: 3;
-        grid-row: 1;
-      }
-
-      .project-meta {
-        grid-column: 2 / 4;
-
-        margin-top: 0;
-      }
-
-      .featured-media {
-        min-height: 400px;
-      }
-
-      .featured-info {
-        grid-template-columns: 1fr;
-
-        gap: 15px;
-      }
-
-      .experience {
-        grid-template-columns: 1fr;
-
-        gap: 10px;
-      }
-
-      .experience-description {
-        margin-top: 10px;
-      }
-
-      .about-layout {
-        grid-template-columns: 1fr;
-
-        gap: 60px;
-      }
-
-      .capability {
-        grid-template-columns: 1fr;
-
-        gap: 7px;
-      }
-
-      .contact-heading {
-        font-size: clamp(52px, 15vw, 90px);
-      }
-
-      .footer-inner {
-        flex-direction: column;
-
-        gap: 8px;
-      }
-
     }
-
   </style>
 </head>
 
-
 <body>
 
+  <div class="container">
 
-  <!-- =======================================================
-       NAV
-  ======================================================== -->
+    <!-- INTRO -->
 
-  <header>
+    <section class="intro">
 
-    <div class="container">
+      <h1>Mark Gillespie</h1>
 
-      <nav>
+      <p>
+        Media systems, workflow automation, data, broadcast engineering,
+        video production, and generative AI.
+      </p>
 
-        <a href="#" class="logo">
-          Mark Gillespie
-        </a>
-
-        <div class="nav-links">
-
-          <a href="#work">
-            Work
-          </a>
-
-          <a href="#experience">
-            Experience
-          </a>
-
-          <a href="#about">
-            About
-          </a>
-
-          <a href="#contact">
-            Contact
-          </a>
-
-        </div>
-
-      </nav>
-
-    </div>
-
-  </header>
-
-
-
-  <main>
-
-
-    <!-- =====================================================
-         HERO
-    ====================================================== -->
-
-    <div class="container">
-
-      <div class="hero fade">
-
-        <div class="hero-label">
-          Media Systems / Automation / Data / AI
-        </div>
-
-        <h1>
-          Technology for modern media.
-        </h1>
-
-        <p class="hero-description">
-
-          I'm Mark Gillespie, a media systems professional
-          working across broadcast engineering, workflow automation,
-          cloud infrastructure, data, APIs and generative AI.
-
-        </p>
-
-        <div class="hero-bottom">
-
-          <a href="#work" class="text-link">
-            Selected work
-          </a>
-
-          <a
-            href="https://github.com/YOURUSERNAME"
-            class="text-link"
-            target="_blank"
-          >
-            GitHub
-          </a>
-
-          <span class="hero-status">
-            Los Angeles, CA
-          </span>
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-
-    <!-- =====================================================
-         WORK
-    ====================================================== -->
-
-    <section id="work">
-
-      <div class="container">
-
-        <div class="section-intro fade">
-
-          <div class="section-number">
-            01 / WORK
-          </div>
-
-          <h2 class="section-title">
-            Systems, workflows and creative technology.
-          </h2>
-
-        </div>
-
-
-
-        <div class="project-list">
-
-
-          <!-- PROJECT 1 -->
-
-          <a href="#" class="project fade">
-
-            <div class="project-number">
-              01
-            </div>
-
-            <h3 class="project-title">
-              Automated Media Distribution
-            </h3>
-
-            <p class="project-description">
-
-              Automated media movement between production systems,
-              cloud storage, quality control, metadata and publishing.
-
-            </p>
-
-            <div class="project-arrow">
-              ↗
-            </div>
-
-            <div class="project-meta">
-
-              <span>AWS</span>
-
-              <span>Vantage</span>
-
-              <span>APIs</span>
-
-              <span>n8n</span>
-
-              <span>YouTube</span>
-
-            </div>
-
-          </a>
-
-
-
-          <!-- PROJECT 2 -->
-
-          <a href="#" class="project fade">
-
-            <div class="project-number">
-              02
-            </div>
-
-            <h3 class="project-title">
-              YouTube Performance Analytics
-            </h3>
-
-            <p class="project-description">
-
-              SQL and Tableau analysis exploring video performance,
-              click-through rate, runtime and publishing trends.
-
-            </p>
-
-            <div class="project-arrow">
-              ↗
-            </div>
-
-            <div class="project-meta">
-
-              <span>SQL</span>
-
-              <span>MySQL</span>
-
-              <span>Tableau</span>
-
-              <span>Analytics</span>
-
-            </div>
-
-          </a>
-
-
-
-          <!-- PROJECT 3 -->
-
-          <a href="#" class="project fade">
-
-            <div class="project-number">
-              03
-            </div>
-
-            <h3 class="project-title">
-              AI Media Automation
-            </h3>
-
-            <p class="project-description">
-
-              AI-assisted media workflows for metadata generation,
-              content analysis, automated QC and human review.
-
-            </p>
-
-            <div class="project-arrow">
-              ↗
-            </div>
-
-            <div class="project-meta">
-
-              <span>LLMs</span>
-
-              <span>Agents</span>
-
-              <span>n8n</span>
-
-              <span>APIs</span>
-
-            </div>
-
-          </a>
-
-
-
-          <!-- PROJECT 4 -->
-
-          <a href="#" class="project fade">
-
-            <div class="project-number">
-              04
-            </div>
-
-            <h3 class="project-title">
-              Live Broadcast Systems
-            </h3>
-
-            <p class="project-description">
-
-              Technical direction, signal routing, IP video,
-              remote contribution, streaming and resilient production.
-
-            </p>
-
-            <div class="project-arrow">
-              ↗
-            </div>
-
-            <div class="project-meta">
-
-              <span>TriCaster</span>
-
-              <span>OBS</span>
-
-              <span>vMix</span>
-
-              <span>NDI</span>
-
-            </div>
-
-          </a>
-
-
-
-          <!-- PROJECT 5 -->
-
-          <a href="#" class="project fade">
-
-            <div class="project-number">
-              05
-            </div>
-
-            <h3 class="project-title">
-              Live & Esports Editing
-            </h3>
-
-            <p class="project-description">
-
-              Fast-turn editorial work for live broadcasts and
-              competitive esports productions.
-
-            </p>
-
-            <div class="project-arrow">
-              ↗
-            </div>
-
-            <div class="project-meta">
-
-              <span>Premiere Pro</span>
-
-              <span>Final Cut Pro</span>
-
-              <span>Live Production</span>
-
-            </div>
-
-          </a>
-
-
-
-          <!-- PROJECT 6 -->
-
-          <a href="#" class="project fade">
-
-            <div class="project-number">
-              06
-            </div>
-
-            <h3 class="project-title">
-              Generative AI Video
-            </h3>
-
-            <p class="project-description">
-
-              Experiments with generative video, creative AI tools
-              and automated production workflows.
-
-            </p>
-
-            <div class="project-arrow">
-              ↗
-            </div>
-
-            <div class="project-meta">
-
-              <span>Runway</span>
-
-              <span>Generative AI</span>
-
-              <span>Video</span>
-
-            </div>
-
-          </a>
-
-
-        </div>
-
-
-
-        <!-- FEATURED WORK VISUAL -->
-
-        <div class="featured fade">
-
-          <div class="featured-media">
-
-            <div class="featured-diagram">
-
-              <span>
-                Media
-              </span>
-
-              <i></i>
-
-              <span>
-                Vantage
-              </span>
-
-              <i></i>
-
-              <span>
-                S3
-              </span>
-
-              <i></i>
-
-              <span>
-                AI / QC
-              </span>
-
-              <i></i>
-
-              <span>
-                Publish
-              </span>
-
-            </div>
-
-          </div>
-
-
-          <div class="featured-info">
-
-            <h3>
-              Designing systems around the workflow.
-            </h3>
-
-            <p>
-
-              My projects focus on connecting tools and systems
-              into practical workflows that reduce repetitive work,
-              improve reliability and help media move through production
-              more efficiently.
-
-            </p>
-
-          </div>
-
-        </div>
-
-
+      <div class="intro-links">
+        <a href="https://github.com/YOURUSERNAME">GitHub</a>
+        <a href="https://linkedin.com/in/YOURUSERNAME">LinkedIn</a>
+        <a href="mailto:YOUR-EMAIL@example.com">Email</a>
+        <a href="YOUR-RESUME.pdf">Resume</a>
       </div>
 
     </section>
 
 
+    <!-- MAIN CARDS -->
 
-    <!-- =====================================================
-         EXPERIENCE
-    ====================================================== -->
+    <div class="grid">
 
-    <section id="experience">
+      <a href="#" class="card large">
 
-      <div class="container">
-
-        <div class="section-intro fade">
-
-          <div class="section-number">
-            02 / EXPERIENCE
-          </div>
-
-          <h2 class="section-title">
-            Built in live production environments.
-          </h2>
-
+        <div class="card-label">
+          Featured project
         </div>
 
-
-
-        <div class="experience-list">
-
-
-          <div class="experience fade">
-
-            <div class="experience-date">
-              2022 — Present
-            </div>
-
-            <div>
-
-              <h3 class="experience-title">
-                Technical Director / Director
-              </h3>
-
-              <div class="experience-company">
-                The Young Turks
-              </div>
-
-            </div>
-
-            <p class="experience-description">
-
-              Direct live and remote productions, maintain production
-              systems, troubleshoot technical issues and build
-              reliable broadcast workflows.
-
-            </p>
-
-          </div>
-
-
-
-          <div class="experience fade">
-
-            <div class="experience-date">
-              2022 — Present
-            </div>
-
-            <div>
-
-              <h3 class="experience-title">
-                Live Broadcast Editor
-              </h3>
-
-              <div class="experience-company">
-                Riot Games
-              </div>
-
-            </div>
-
-            <p class="experience-description">
-
-              Create fast-turn highlight and editorial content
-              for live esports broadcasts under tight production deadlines.
-
-            </p>
-
-          </div>
-
-
-
-          <div class="experience fade">
-
-            <div class="experience-date">
-              2020 — 2022
-            </div>
-
-            <div>
-
-              <h3 class="experience-title">
-                Video Editor / Studio Engineer
-              </h3>
-
-              <div class="experience-company">
-                T&R Productions
-              </div>
-
-            </div>
-
-            <p class="experience-description">
-
-              Supported editing, streaming, studio engineering,
-              remote contribution, signal routing and live news production.
-
-            </p>
-
-          </div>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         ABOUT
-    ====================================================== -->
-
-    <section id="about">
-
-      <div class="container">
-
-        <div class="section-intro fade">
-
-          <div class="section-number">
-            03 / ABOUT
-          </div>
-
-          <h2 class="section-title">
-            Production experience with an engineering mindset.
-          </h2>
-
-        </div>
-
-
-
-        <div class="about-layout">
-
-
-          <div class="about-copy fade">
-
-            <p>
-
-              My background sits between creative production
-              and technical systems.
-
-            </p>
-
-            <p>
-
-              I enjoy finding ways to make complicated media
-              workflows simpler, more reliable and easier to scale.
-
-            </p>
-
-            <p>
-
-              That might mean solving an IP video problem during
-              a live broadcast, connecting services through APIs,
-              analyzing production data or prototyping an AI workflow.
-
-            </p>
-
-          </div>
-
-
-
-          <div class="capabilities fade">
-
-
-            <div class="capability">
-
-              <div class="capability-title">
-                Media Systems
-              </div>
-
-              <div class="capability-text">
-
-                TriCaster, OBS, vMix, NDI, streaming,
-                Vantage, live production
-
-              </div>
-
-            </div>
-
-
-
-            <div class="capability">
-
-              <div class="capability-title">
-                Automation
-              </div>
-
-              <div class="capability-text">
-
-                REST APIs, JSON, n8n, AWS,
-                media pipelines
-
-              </div>
-
-            </div>
-
-
-
-            <div class="capability">
-
-              <div class="capability-title">
-                Data
-              </div>
-
-              <div class="capability-text">
-
-                SQL, Tableau, Python, pandas
-
-              </div>
-
-            </div>
-
-
-
-            <div class="capability">
-
-              <div class="capability-title">
-                AI
-              </div>
-
-              <div class="capability-text">
-
-                Generative AI, AI agents,
-                media automation, AI video
-
-              </div>
-
-            </div>
-
-
-
-            <div class="capability">
-
-              <div class="capability-title">
-                Creative
-              </div>
-
-              <div class="capability-text">
-
-                Premiere Pro, Final Cut Pro,
-                broadcast editing
-
-              </div>
-
-            </div>
-
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         CONTACT
-    ====================================================== -->
-
-    <section
-      id="contact"
-      class="contact-section"
-    >
-
-      <div class="container fade">
-
-        <div class="section-number">
-          04 / CONTACT
-        </div>
-
-        <h2 class="contact-heading">
-          Let's make media work better.
+        <h2>
+          Automated Media Workflow
         </h2>
 
-        <p class="contact-description">
-
-          I'm interested in opportunities involving media technology,
-          solutions engineering, automation, cloud workflows,
-          data and applied AI.
-
+        <p>
+          Media automation using AWS, APIs, Vantage,
+          n8n and publishing integrations.
         </p>
 
+        <span class="card-arrow">
+          View project ↗
+        </span>
 
-        <div class="contact-links">
-
-
-          <a
-            href="mailto:YOUR-EMAIL@example.com"
-            class="text-link"
-          >
-            Email
-          </a>
+      </a>
 
 
-          <a
-            href="https://linkedin.com/in/YOURUSERNAME"
-            class="text-link"
-            target="_blank"
-          >
-            LinkedIn
-          </a>
+      <a href="#" class="card tall featured">
 
-
-          <a
-            href="https://github.com/YOURUSERNAME"
-            class="text-link"
-            target="_blank"
-          >
-            GitHub
-          </a>
-
-
-          <a
-            href="YOUR-RESUME.pdf"
-            class="text-link"
-            target="_blank"
-          >
-            Resume
-          </a>
-
-
+        <div class="card-label">
+          AI
         </div>
 
-      </div>
+        <h2>
+          Generative AI
+        </h2>
 
-    </section>
+        <p>
+          AI video, metadata generation, automated QC,
+          and agent-based media workflows.
+        </p>
+
+        <span class="card-arrow">
+          View work ↗
+        </span>
+
+      </a>
 
 
-  </main>
+      <a href="#" class="card">
+
+        <div class="card-label">
+          Data
+        </div>
+
+        <h2>
+          SQL + Tableau
+        </h2>
+
+        <p>
+          Analytics and visualization projects.
+        </p>
+
+        <span class="card-arrow">
+          View project ↗
+        </span>
+
+      </a>
 
 
+      <a href="#" class="card">
 
-  <!-- =======================================================
-       FOOTER
-  ======================================================== -->
+        <div class="card-label">
+          Broadcast
+        </div>
 
-  <footer>
+        <h2>
+          Live Systems
+        </h2>
 
-    <div class="container footer-inner">
+        <p>
+          Technical directing, streaming,
+          routing and production engineering.
+        </p>
 
-      <span>
-        © 2026 Mark Gillespie
-      </span>
+        <span class="card-arrow">
+          View work ↗
+        </span>
 
-      <span>
-        Los Angeles, California
-      </span>
+      </a>
+
+
+      <a href="#" class="card large">
+
+        <div class="card-label">
+          Video
+        </div>
+
+        <h2>
+          Editing & Live Production
+        </h2>
+
+        <p>
+          Broadcast editing, esports highlights,
+          live production and technical workflows.
+        </p>
+
+        <span class="card-arrow">
+          Watch reel ↗
+        </span>
+
+      </a>
 
     </div>
 
-  </footer>
+
+    <!-- LATEST WORK -->
+
+    <div class="section-title">
+      Selected Work
+    </div>
 
 
+    <div class="work-list">
 
-  <!-- =======================================================
-       VERY SMALL SCROLL ANIMATION
-  ======================================================== -->
+      <a href="#" class="work-item">
+        <h3>Automated Media Distribution Pipeline</h3>
+        <span>AWS / API / n8n</span>
+      </a>
 
-  <script>
+      <a href="#" class="work-item">
+        <h3>YouTube Performance Analytics</h3>
+        <span>SQL / Tableau</span>
+      </a>
 
-    const elements =
-      document.querySelectorAll(".fade");
+      <a href="#" class="work-item">
+        <h3>AI Metadata & QC Workflow</h3>
+        <span>AI / Automation</span>
+      </a>
 
+      <a href="#" class="work-item">
+        <h3>Broadcast & Technical Direction</h3>
+        <span>Live Media</span>
+      </a>
 
-    const observer =
-      new IntersectionObserver(
+      <a href="#" class="work-item">
+        <h3>Generative AI Video</h3>
+        <span>Runway / AI Video</span>
+      </a>
 
-        entries => {
-
-          entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-              entry.target
-                .classList
-                .add("visible");
-
-              observer.unobserve(
-                entry.target
-              );
-
-            }
-
-          });
-
-        },
-
-        {
-          threshold: 0.08
-        }
-
-      );
+    </div>
 
 
-    elements.forEach(element => {
+    <!-- FOOTER -->
 
-      observer.observe(element);
+    <footer>
+      © 2026 Mark Gillespie
+    </footer>
 
-    });
-
-  </script>
-
+  </div>
 
 </body>
 </html>
