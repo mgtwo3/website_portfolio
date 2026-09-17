@@ -591,47 +591,6 @@ h3 {
 }
 
 
-/* Embedded Project Videos */
-
-.project-video {
-    position: relative;
-
-    width: 100%;
-    aspect-ratio: 16 / 9;
-
-    overflow: hidden;
-
-    border: 1px solid #343d48;
-    border-radius: 7px;
-
-    background: #000;
-}
-
-.project-video iframe {
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    border: 0;
-}
-
-/* Featured Project Layout */
-
-.project-featured {
-    grid-template-columns: 1fr;
-    gap: 30px;
-}
-
-.project-featured .project-video {
-    width: 100%;
-    max-width: none;
-}
-
-.project-featured .project-copy {
-    max-width: 800px;
-}
-
 
 /* Project Copy */
 
