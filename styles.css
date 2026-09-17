@@ -133,6 +133,22 @@ nav a[aria-current] {
     box-shadow: 0 2px var(--blue);
 }
 
+/* Featured Project Layout */
+
+.project-featured {
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.project-featured .project-video {
+    width: 100%;
+    max-width: none;
+}
+
+.project-featured .project-copy {
+    max-width: 800px;
+}
+
 
 /* =========================================================
    TYPOGRAPHY
