@@ -616,6 +616,22 @@ h3 {
     border: 0;
 }
 
+/* Featured Project Layout */
+
+.project-featured {
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.project-featured .project-video {
+    width: 100%;
+    max-width: none;
+}
+
+.project-featured .project-copy {
+    max-width: 800px;
+}
+
 
 /* Project Copy */
 
