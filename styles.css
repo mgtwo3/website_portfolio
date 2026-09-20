@@ -976,3 +976,58 @@ h3 {
     width: 200px;
 }
 }
+
+/* HOMEPAGE: FOUR PROJECT CARDS AND A VERTICAL ABOUT CARD */
+.home-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) minmax(140px, 0.55fr);
+    grid-template-areas:
+        "ai data about"
+        "post broadcast about";
+}
+
+.home-box[href="ai-automation.html"] {
+    grid-area: ai;
+}
+
+.home-box[href="data-analytics.html"] {
+    grid-area: data;
+}
+
+.home-box[href="post-production.html"] {
+    grid-area: post;
+}
+
+.home-box[href="broadcast-engineering.html"] {
+    grid-area: broadcast;
+}
+
+.home-grid .home-about-card {
+    grid-area: about;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 20px;
+}
+
+/* Retain comfortable text widths on smaller screens. */
+@media (max-width: 640px) {
+    .home-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-areas:
+            "ai data"
+            "post broadcast"
+            "about about";
+    }
+
+    .home-grid .home-about-card {
+        padding: 14px 36px 14px 16px;
+    }
+
+    .home-about-card .home-label {
+        display: none;
+    }
+
+    .home-about-card p {
+        margin-top: 4px;
+    }
+}
