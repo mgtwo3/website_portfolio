@@ -909,3 +909,70 @@ h3 {
     .home-grid { margin: 14px 0; }
     .home-grid .home-box { padding-top: 14px; padding-bottom: 14px; }
 }
+
+/* ABOUT PAGE AND HOMEPAGE HIGHLIGHTS */
+.home-simple {
+    --blue: #78b7ff;
+}
+.home-intro .home-about {
+    margin-right: 20px;
+}
+.about-intro {
+    padding-bottom: 36px;
+}
+.about-profile {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 48px;
+    align-items: center;
+    padding-bottom: 48px;
+}
+.about-photo {
+    width: 240px;
+    height: auto;
+    border: 1px solid var(--line);
+    border-radius: 7px;
+}
+.about-profile .lede {
+    margin-top: 0;
+}
+.about-email {
+    margin-top: 20px;
+}
+.about-background {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 48px;
+    border-top: 1px solid var(--line);
+    padding: 36px 0 48px;
+}
+.about-background h2 {
+    font-size: 28px;
+}
+.experience-list {
+    list-style: none;
+    padding: 0;
+    margin: 22px 0 0;
+}
+.experience-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+}
+.experience-list strong {
+    display: block;
+    font-weight: 500;
+}
+.experience-list span {
+    display: block;
+    color: var(--muted);
+    font-size: 15px;
+}
+@media (max-width: 700px) {
+    .about-profile, .about-background {
+    grid-template-columns: 1fr;
+    gap: 28px;
+}
+    .about-photo {
+    width: 200px;
+}
+}
